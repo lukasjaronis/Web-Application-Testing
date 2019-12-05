@@ -28,7 +28,18 @@ if (this.state.strike > 2) {
     strikes: 0
   });
 }
+}
 
+handleBalls = event => {
+  event.preventDefault();
+  this.setState({
+    balls: this.state.balls + 1
+  });
+  if (this.state.balls > 3) {
+    this.setState({
+      balls: 0
+    });
+  }
 }
 
 
