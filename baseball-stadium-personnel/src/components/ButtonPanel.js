@@ -20,6 +20,8 @@ const ButtonPanelStyles = styled.div`
         background: none;
         border: 1px solid #5d001e;
         padding: 5px;
+        border-radius: 15px;
+        font-weight: 900;
 
         &:hover {
           background: #5d001e;
