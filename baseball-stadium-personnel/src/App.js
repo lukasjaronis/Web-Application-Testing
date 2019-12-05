@@ -42,16 +42,39 @@ handleBalls = event => {
   }
 }
 
+handleHit = event => {
+  event.preventDefault();
+  this.setState({
+    strikes: 0,
+    balls: 0
+  });
+}
+
+
+handleFoul = event => {
+  event.preventDefault();
+  this.setState({
+    strikes: this.state.strikes + 1
+  });
+
+  if(this.state.strikes === 2) {
+    this.setState({
+      strikes: 2
+    });
+  }
+
+}
 
 
   render() {
 
     return (
       <div className="App">
+      <Display strikes={this.state.strikes} balls={this.state.balls} />
+      <ButtonPanel handleStrikes={this.handleStrikes} handleBalls={this.handleBalls} handleHit={this.handleHit} handleFoul={this.handleFoul}  />
   
       </div>
     );
-
   }
 
 }
